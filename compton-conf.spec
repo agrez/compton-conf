@@ -1,8 +1,8 @@
-%global     commit c6d6efbe40995a7d8ef44a89e17a547836008757
+%global     commit e71ee4c9a6e3a3b579543bb0e6d969b585ff3209
 %global     commit_short %(c=%{commit}; echo ${c:0:7})
 
 Name:           compton-conf
-Version:        0.1.0
+Version:        0.2.0
 Release:        1.%{commit_short}%{?dist}
 Summary:        GUI configuration tool for compton
 License:        LGPL-2.1+
@@ -10,6 +10,7 @@ Group:          User Interface/X
 URL:            https://github.com/lxde/%{name}
 Source0:        https://github.com/lxde/%{name}/archive/%{commit}.tar.gz#/%{name}-%{version}-%{commit_short}.tar.gz
 BuildRequires:  cmake
+BuildRequires:  git
 BuildRequires:  fdupes
 BuildRequires:  pkgconfig
 BuildRequires:  cmake(KF5WindowSystem)
@@ -52,6 +53,10 @@ desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
 
 
 %changelog
+* Sun Oct 16 2016 Vaughan <devel at agrez dot net> - 0.2.0-1.e71ee4c
+- New release (git commit e71ee4c9a6e3a3b579543bb0e6d969b585ff3209)
+- Add Buildrequires: git
+
 * Wed Sep 14 2016 Vaughan <devel at agrez dot net> - 0.1.0-1.c6d6efb
 - Initial package
 - Git commit: c6d6efbe40995a7d8ef44a89e17a547836008757
