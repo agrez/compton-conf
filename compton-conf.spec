@@ -1,8 +1,8 @@
-%global     commit e71ee4c9a6e3a3b579543bb0e6d969b585ff3209
+%global     commit 5603f30b447357964be065eb05ae35e39745a302
 %global     commit_short %(c=%{commit}; echo ${c:0:7})
 
 Name:           compton-conf
-Version:        0.2.0
+Version:        0.2.1
 Release:        1.%{commit_short}%{?dist}
 Summary:        GUI configuration tool for compton
 License:        LGPL-2.1+
@@ -53,6 +53,10 @@ desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
 
 
 %changelog
+* Tue Feb 14 2017 Vaughan <devel at agrez dot net> - 0.2.1-1.5603f30
+- New release
+- Update to  git commit: 5603f30b447357964be065eb05ae35e39745a302
+
 * Sun Oct 16 2016 Vaughan <devel at agrez dot net> - 0.2.0-1.e71ee4c
 - New release (git commit e71ee4c9a6e3a3b579543bb0e6d969b585ff3209)
 - Add Buildrequires: git
