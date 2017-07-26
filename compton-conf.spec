@@ -1,9 +1,9 @@
-%global     commit 5603f30b447357964be065eb05ae35e39745a302
+%global     commit 786ad3fae93a4ba1efb3c76e239fddd1f604a30d
 %global     commit_short %(c=%{commit}; echo ${c:0:7})
 
 Name:           compton-conf
 Version:        0.2.1
-Release:        1.%{commit_short}%{?dist}
+Release:        2.%{commit_short}%{?dist}
 Summary:        GUI configuration tool for compton
 License:        LGPL-2.1+
 Group:          User Interface/X
@@ -50,9 +50,13 @@ desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
 %{_datadir}/%{name}
+%{_sysconfdir}/xdg/autostart/*.desktop
 
 
 %changelog
+* Tue Jul 25 2017 Vaughan <devel at agrez dot net> - 0.2.1-2.786ad3f
+- Update to  git commit: 786ad3fae93a4ba1efb3c76e239fddd1f604a30d
+
 * Tue Feb 14 2017 Vaughan <devel at agrez dot net> - 0.2.1-1.5603f30
 - New release
 - Update to  git commit: 5603f30b447357964be065eb05ae35e39745a302
