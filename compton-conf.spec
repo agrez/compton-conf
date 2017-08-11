@@ -3,7 +3,7 @@
 
 Name:           compton-conf
 Version:        0.2.1
-Release:        2.%{commit_short}%{?dist}
+Release:        3.%{commit_short}%{?dist}
 Summary:        GUI configuration tool for compton
 License:        LGPL-2.1+
 Group:          User Interface/X
@@ -43,6 +43,8 @@ make %{?_smp_mflags}
 desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
 %{buildroot}%{_datadir}/applications/%{name}.desktop
 
+desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt \
+%{buildroot}%{_sysconfdir}/xdg/autostart/lxqt-compton.desktop
 
 %files
 %defattr(-,root,root)
@@ -54,6 +56,9 @@ desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
 
 
 %changelog
+* Fri Aug 11 2017 Vaughan <devel at agrez dot net> - 0.2.1-3.786ad3f
+- Fix autostart desktop file
+
 * Tue Jul 25 2017 Vaughan <devel at agrez dot net> - 0.2.1-2.786ad3f
 - Update to  git commit: 786ad3fae93a4ba1efb3c76e239fddd1f604a30d
 
