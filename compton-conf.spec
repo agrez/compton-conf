@@ -51,8 +51,8 @@ desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
 desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt \
 %{buildroot}%{_sysconfdir}/xdg/autostart/lxqt-compton.desktop
 
+
 %files
-%defattr(-,root,root)
 %doc AUTHORS COPYING README.md compton.conf.example
 %{_bindir}/%{name}
 %{_datadir}/applications/*.desktop
@@ -61,6 +61,10 @@ desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt \
 
 
 %changelog
+* Sat Nov 10 2018 Vaughan <devel at agrez dot net> - 0.4.0-1.9a013cd
+- New release
+- Update to  git commit: 9a013cd28ae13c848ab0de267067aad526d2cc7d
+
 * Fri Aug 11 2017 Vaughan <devel at agrez dot net> - 0.2.1-3.786ad3f
 - Fix autostart desktop file
 
