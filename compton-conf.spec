@@ -1,9 +1,9 @@
-%global     commit 786ad3fae93a4ba1efb3c76e239fddd1f604a30d
+%global     commit 9a013cd28ae13c848ab0de267067aad526d2cc7d
 %global     commit_short %(c=%{commit}; echo ${c:0:7})
 
 Name:           compton-conf
-Version:        0.2.1
-Release:        3.%{commit_short}%{?dist}
+Version:        0.4.0
+Release:        1.%{commit_short}%{?dist}
 Summary:        GUI configuration tool for compton
 License:        LGPL-2.1+
 Group:          User Interface/X
