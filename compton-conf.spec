@@ -3,7 +3,7 @@
 
 Name:           compton-conf
 Version:        0.4.0
-Release:        1.%{commit_short}%{?dist}
+Release:        2.%{commit_short}%{?dist}
 Summary:        GUI configuration tool for compton
 License:        LGPL-2.1+
 Group:          User Interface/X
@@ -51,6 +51,11 @@ desktop-file-edit --remove-category=LXQt --add-category=X-LXQt \
 desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt \
 %{buildroot}%{_sysconfdir}/xdg/autostart/lxqt-compton.desktop
 
+# Enable compton by default for a smoother desktop experience.
+# This also stops LXQt start problems (when loggin in) when using VC4
+desktop-file-edit --set-key=Hidden --set-value=false \
+%{buildroot}%{_sysconfdir}/xdg/autostart/lxqt-compton.desktop
+
 
 %files
 %doc AUTHORS COPYING README.md compton.conf.example
@@ -61,6 +66,9 @@ desktop-file-edit --remove-only-show-in=LXQt --add-only-show-in=X-LXQt \
 
 
 %changelog
+* Fri Nov 16 2018 Vaughan <devel at agrez dot net> - 0.4.0-2.9a013cd
+- Enable compton by default
+
 * Sat Nov 10 2018 Vaughan <devel at agrez dot net> - 0.4.0-1.9a013cd
 - New release
 - Update to  git commit: 9a013cd28ae13c848ab0de267067aad526d2cc7d
